@@ -12,3 +12,12 @@
 /Users/simmi/repos/personal/c#/CsharpProjects/TestProject/obj/Debug/net8.0/TestProject.pdb
 /Users/simmi/repos/personal/c#/CsharpProjects/TestProject/obj/Debug/net8.0/TestProject.genruntimeconfig.cache
 /Users/simmi/repos/personal/c#/CsharpProjects/TestProject/obj/Debug/net8.0/ref/TestProject.dll
+/Users/simmi/repos/personal/c#/CsharpProjects/LearningC#/obj/Debug/net8.0/TestProject.GeneratedMSBuildEditorConfig.editorconfig
+/Users/simmi/repos/personal/c#/CsharpProjects/LearningC#/obj/Debug/net8.0/TestProject.AssemblyInfoInputs.cache
+/Users/simmi/repos/personal/c#/CsharpProjects/LearningC#/obj/Debug/net8.0/TestProject.AssemblyInfo.cs
+/Users/simmi/repos/personal/c#/CsharpProjects/LearningC#/obj/Debug/net8.0/TestProject.csproj.CoreCompileInputs.cache
+/Users/simmi/repos/personal/c#/CsharpProjects/LearningC#/obj/Debug/net8.0/TestProject.sourcelink.json
+/Users/simmi/repos/personal/c#/CsharpProjects/LearningC#/obj/Debug/net8.0/TestProject.dll
+/Users/simmi/repos/personal/c#/CsharpProjects/LearningC#/obj/Debug/net8.0/refint/TestProject.dll
+/Users/simmi/repos/personal/c#/CsharpProjects/LearningC#/obj/Debug/net8.0/TestProject.pdb
+/Users/simmi/repos/personal/c#/CsharpProjects/TestProject/obj/Debug/net8.0/TestProject.sourcelink.json

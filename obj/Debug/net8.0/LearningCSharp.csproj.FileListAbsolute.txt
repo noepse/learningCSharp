@@ -1,0 +1,5 @@
+/Users/simmi/repos/personal/c#/CsharpProjects/LearningCSharp/obj/Debug/net8.0/LearningCSharp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/simmi/repos/personal/c#/CsharpProjects/LearningCSharp/obj/Debug/net8.0/LearningCSharp.AssemblyInfoInputs.cache
+/Users/simmi/repos/personal/c#/CsharpProjects/LearningCSharp/obj/Debug/net8.0/LearningCSharp.AssemblyInfo.cs
+/Users/simmi/repos/personal/c#/CsharpProjects/LearningCSharp/obj/Debug/net8.0/LearningCSharp.csproj.CoreCompileInputs.cache
+/Users/simmi/repos/personal/c#/CsharpProjects/LearningCSharp/obj/Debug/net8.0/LearningCSharp.sourcelink.json
