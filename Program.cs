@@ -1,12 +1,18 @@
-﻿string permission = "Egg";
-int level = 10;
+﻿int[] numbers = { 4, 8, 15, 16, 23, 42 };
 
-if (permission.Contains("Admin")){
-Console.WriteLine($"Welcome,{(level > 55? " Super" : "")} Admin user.");
+bool found = false;
+int total = 0;
+
+foreach (int number in numbers){
+    total += number;
+
+    if (number == 42){
+       found = true;
+    }
 }
-else if (permission.Contains("Manager")){
-Console.WriteLine($"{(level > 20? "Contact an Admin for access." : "You do not have sufficient privileges.")}");
+
+if (found) {
+    Console.WriteLine("Set contains 42");
 }
-else{
-Console.WriteLine("You do not have sufficient privileges.");
-}
+
+Console.WriteLine($"Total: {total}");
