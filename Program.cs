@@ -1,19 +1,21 @@
-﻿string? readResult;
+﻿using System;
+
+string? readResult;
 bool validEntry = false;
-int validNumber = 0;
-Console.WriteLine("Enter a number containing between 5 and 10:");
+
+Console.WriteLine("Enter your role name (Administrator, Manager or User):");
 do
 {
     readResult = Console.ReadLine();
-    if (int.TryParse(readResult, out validNumber))
+    if (readResult!= null)
     {
-        if (validNumber >= 5 && validNumber <=10)
+        if (readResult.ToLower().Equals("administrator") || readResult.ToLower().Equals("manager") || readResult.ToLower().Equals("user"))
         {
             validEntry = true;
         }
         else
         {
-            Console.WriteLine($"You entered an invalid number ({readResult}). Please enter a number between 5 and 10.");
+            Console.WriteLine($"You entered an invalid role ({readResult}). Please enter your role name (Administrator, Manager or User).");
         }
     }
 } while (validEntry == false);
