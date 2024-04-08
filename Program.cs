@@ -1,23 +1,21 @@
-﻿using System;
+﻿string[] myStrings = new string[2] { "I like pizza. I like roast chicken. I like salad", "I like all three of the menu choices" };
 
-string? readResult;
-bool validEntry = false;
+int periodLocation;
 
-Console.WriteLine("Enter your role name (Administrator, Manager or User):");
-do
-{
-    readResult = Console.ReadLine();
-    if (readResult!= null)
-    {
-        if (readResult.ToLower().Equals("administrator") || readResult.ToLower().Equals("manager") || readResult.ToLower().Equals("user"))
-        {
-            validEntry = true;
-        }
-        else
-        {
-            Console.WriteLine($"You entered an invalid role ({readResult}). Please enter your role name (Administrator, Manager or User).");
-        }
-    }
-} while (validEntry == false);
+foreach(string str in myStrings){
+    string remainingStr = str;
 
-Console.WriteLine($"Your input value ({readResult}) has been accepted.");
+    if (str.Contains(".")){
+    periodLocation = str.IndexOf(".");
+    } else periodLocation = -1;
+
+    string subStr;
+
+    while (periodLocation != -1) {
+        subStr = remainingStr.Remove(periodLocation);
+        remainingStr = remainingStr.Substring(periodLocation + 1).TrimStart();
+        periodLocation = remainingStr.IndexOf(".");
+        Console.WriteLine(subStr);
+    } 
+    Console.WriteLine(remainingStr);
+}
