@@ -14,6 +14,9 @@ int playerY = 0;
 int foodX = 0;
 int foodY = 0;
 
+// Current speed of player
+int speed = 1;
+
 // Available player and food strings
 string[] states = {"('-')", "(^-^)", "(X_X)"};
 string[] foods = {"@@@@@", "$$$$$", "#####"};
@@ -27,7 +30,7 @@ int food = 0;
 InitializeGame();
 while (!shouldExit && !TerminalResized()) 
 {
-    Move(true);
+    Move(true, speed);
     eatsFood();
 }
 EndGame();
@@ -36,10 +39,25 @@ bool eatsFood(){
     if (playerX == foodX && playerY == foodY){
         ChangePlayer();
         ShowFood();
+        isPoisoned();
+        speed = getSpeed();
         return true;
     } else {
         return false;
     }
+}
+
+int getSpeed(){
+    if (player == states[1]){
+        return 3;
+    } else return 1;
+}
+
+bool isPoisoned(){
+    if (player == states[2]){
+        FreezePlayer();
+        return true;
+    } else return false;
 }
 
 void EndGame(){
@@ -81,30 +99,30 @@ void ChangePlayer()
 // Temporarily stops the player from moving
 void FreezePlayer() 
 {
-    System.Threading.Thread.Sleep(1000);
+    System.Threading.Thread.Sleep(1500);
     player = states[0];
 }
 
 // Reads directional input from the Console and moves the player
-void Move(bool nonDirectionalInputDetection = false) 
+void Move(bool nonDirectionalInputDetection = false, int speed = 1) 
 {
+
     int lastX = playerX;
     int lastY = playerY;
     bool nonDirectionalKey = false;
-    
     switch (Console.ReadKey(true).Key) 
     {
         case ConsoleKey.UpArrow:
-            playerY--; 
+            playerY -= 1; 
             break;
 		case ConsoleKey.DownArrow: 
-            playerY++; 
+            playerY += 1; 
             break;
 		case ConsoleKey.LeftArrow:  
-            playerX--; 
+            playerX -= speed; 
             break;
 		case ConsoleKey.RightArrow: 
-            playerX++; 
+            playerX += speed; 
             break;
 		case ConsoleKey.Escape:     
             shouldExit = true; 
@@ -113,7 +131,7 @@ void Move(bool nonDirectionalInputDetection = false)
             nonDirectionalKey = true;
         break;
     }
-
+    
     if (nonDirectionalKey && nonDirectionalInputDetection){
         shouldExit = true;
     }
