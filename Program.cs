@@ -1,42 +1,32 @@
-﻿string customerName = "Ms. Barros";
+﻿const string input = "<div><h2>Widgets &trade;</h2><span>5000</span></div>";
 
-string currentProduct = "Magic Yield";
-int currentShares = 2975000;
-decimal currentReturn = 0.1275m;
-decimal currentProfit = 55000000.0m;
+string quantity = "";
+string output = "";
 
-string newProduct = "Glorious Future";
-decimal newReturn = 0.13125m;
-decimal newProfit = 63000000.0m;
+// Your work here
 
-// Your logic here
+const string quantityTags = "<span>";
+const string quantityEndTags = "</span>";
 
-Console.WriteLine("Here's a quick comparison:\n");
+int firstIndexQ = input.IndexOf(quantityTags);
+int lastIndexQ = input.IndexOf(quantityEndTags);
 
-string comparisonMessage = "";
+int Qlength = lastIndexQ - firstIndexQ - quantityEndTags.Length + 1;
 
-// Your logic here
+firstIndexQ += quantityTags.Length;
 
-Console.WriteLine($"Dear {customerName}");
-Console.WriteLine($"As a customer of our {currentProduct} offering we are excited to tell you about a new financial product that would dramatically increase your return.");
-Console.WriteLine();
-Console.WriteLine($"Currently, you own {currentShares:N2} shares at a return of {currentReturn:P2}.");
+quantity = input.Substring(firstIndexQ, Qlength);
 
-Console.WriteLine();
-Console.WriteLine($"Our new product, {newProduct} offers a return of {newReturn:P2}.  Given your current volume, your potential profit would be {newProfit:C}.");
+const string outputTags = "<div>";
+const string outputEndTags = "</div>";
 
-Console.WriteLine("Here's a quick comparison:");
-Console.WriteLine();
+int firstIndexO = input.IndexOf(outputTags);
+int lastIndexO = input.IndexOf(outputEndTags);
 
+int Olength = lastIndexO - firstIndexO - outputEndTags.Length + 1;
+firstIndexO += outputTags.Length;
 
-comparisonMessage += currentProduct.PadRight(20);
-comparisonMessage += String.Format("{0:P}", currentReturn).PadRight(10);
-comparisonMessage += String.Format("{0:C}", currentProfit).PadRight(20);
-comparisonMessage += "\n";
+output = input.Substring(firstIndexO, Olength);
 
-comparisonMessage += newProduct.PadRight(20);
-comparisonMessage += String.Format("{0:P}", newReturn).PadRight(10);
-comparisonMessage += String.Format("{0:C}", newProfit).PadRight(20);
-
-Console.WriteLine("1234567890123456789012345678901234567890");
-Console.WriteLine(comparisonMessage);
+Console.WriteLine($"Quantity: {quantity}");
+Console.WriteLine($"Output: {output.Replace("&trade;", "&reg;")}");
