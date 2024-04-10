@@ -28,8 +28,19 @@ InitializeGame();
 while (!shouldExit && !TerminalResized()) 
 {
     Move(true);
+    eatsFood();
 }
 EndGame();
+
+bool eatsFood(){
+    if (playerX == foodX && playerY == foodY){
+        ChangePlayer();
+        ShowFood();
+        return true;
+    } else {
+        return false;
+    }
+}
 
 void EndGame(){
     Console.Clear();
